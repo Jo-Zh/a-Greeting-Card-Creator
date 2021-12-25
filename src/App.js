@@ -11,7 +11,10 @@ class App extends Component {
       inputWish: " ",
       inputSend: " ",
     };
-    this.onClickHandler = this.onClickHandler.bind(this);
+     this.onClickHandler = this.onClickHandler.bind(this);
+     this.handleCallbackT=this.handleCallbackT.bind(this);
+     this.handleCallbackW=this.handleCallbackW.bind(this);
+     this.handleCallbackS=this.handleCallbackS.bind(this);
   }
 
 
@@ -23,14 +26,14 @@ class App extends Component {
         }));
       }
 
-  //Data from the Form, handleCallback in arrow-function, if not there is bug, reason is unknown?
-  handleCallbackT=(childData)=>{
+  //Data from the Form, handleCallback in arrow-function, if not function should .bind() in constructor()
+  handleCallbackT(childData){
     this.setState({ inputTitle: childData });
   };
-  handleCallbackW=(childData)=>{
+  handleCallbackW(childData){
     this.setState({ inputWish: childData });
   };
-  handleCallbackS=(childData)=>{
+  handleCallbackS(childData){
     this.setState({ inputSend: childData });
   };
   render() {
